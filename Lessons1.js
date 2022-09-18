@@ -214,3 +214,5 @@ console.log("Height is defined")
 console.log("Height is not defined")
 }
 */
+
+let age = 1995;
