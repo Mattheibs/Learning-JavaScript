@@ -1,4 +1,6 @@
 /*
+//Section 2
+
 // alert("Hello World");
 
 let js = "amazing";
@@ -213,6 +215,231 @@ console.log("Height is defined")
 }else{
 console.log("Height is not defined")
 }
+
+
+const age = "18";
+if (age === "18") {
+	console.log("You are old enough");
+}
+//Notes, strict version === says if something is equal to something else, only returns true if both are exaclty the same. If you say 18(Number) === '18'(String) if will come back false
+//Notes, loose version == does type coersion, meaning if you say 18(Number) == '18'(String) it will come back true
+
+const favourite = Number(prompt("What is you favorite number"));
+console.log(favourite);
+
+if (favourite === 23) {
+	console.log("23 is the best number");
+} else if (favourite === 7) {
+	console.log("7 is an average number");
+} else {
+	console.log("Number is neither 23 or 7");
+}
+
+if (favourite !== 23) {
+	console.log("Why not 23");
+}
+//Notes, !== is the strict version
+//Notes, != is the loose version
+
+//Notes, AND (&&) - return true only if all come back true
+//Notes, OR (||) - returns true if only one comes back true
+//Notes, NOT (!) - inverts the answer (So if the answer was true it is changed to false)
+
+
+const hasDrivers = true;
+const hasGoodVision = true;
+
+console.log(hasDrivers && hasGoodVision);
+console.log(hasDrivers || hasGoodVision);
+console.log(!hasDrivers);
+
+// const shouldDrive = hasDrivers && hasGoodVision;
+
+if (hasDrivers && hasGoodVision) {
+	console.log("You can drive");
+} else {
+	console.log("You should not be driving");
+}
+
+const isTired = true;
+
+console.log(hasDrivers || hasGoodVision || isTired);
+
+if (hasDrivers && hasGoodVision && !isTired) {
+	console.log("You can drive");
+} else {
+	console.log("You should not be driving");
+}
+
+
+//Coding Challenge 3
+
+//Test 1
+const dolAverageScore = (96 + 108 + 89) / 3;
+const koaAverageScore = (88 + 91 + 110) / 3;
+
+if (dolAverageScore > koaAverageScore) {
+	console.log("Dolphins win");
+} else if (koaAverageScore > dolAverageScore) {
+	console.log("Koalas win");
+} else if (dolAverageScore === koaAverageScore) {
+	console.log("This was a draw");
+}
+
+
+const day = prompt("What day is it");
+
+switch (day) {
+	case "Monday":
+		console.log("This is Monday");
+		console.log("Monday is a horrible day");
+		break;
+	case "Tuesday":
+		console.log("This is Tuesday");
+		break;
+	case "Wednesday":
+	case "Thursday":
+		console.log("This is Wednesday and Thursday");
+		break;
+	case "Friday":
+		console.log("This is Friday");
+		break;
+	case "Sunday":
+		console.log("This is the weekend");
+		break;
+	case "Saturday":
+		console.log("This is the weekend");
+		break;
+	default:
+		console.log("Not a valid day");
+}
+
+
+const age = 17;
+
+age >= 18
+	? console.log("I am old enough to drink")
+	: console.log("I am not old enough to drink");
+
+const drink =
+	age >= 18 ? "I am old enough to drink" : "I am not old enough to drink";
+console.log(drink);
+//Notes, ternary operator - it is similar to if statement
+
+console.log(`I like to drink ${age >= 18 ? "Wine" : "Water"}`);
+
+
+//Coding Challenge 4
+const bill = 275;
+let tip;
+
+if (bill > 50 && bill < 300) {
+	let tip = bill * 0.15;
+	console.log(
+		`The bill was ${bill}, the tip was ${tip} and the total value is ${
+			bill + tip
+		}`
+	);
+} else if (bill > 300) {
+	let tip = bill * 0.2;
+	console.log(
+		`The bill was ${bill}, the tip was ${tip} and the total value is ${
+			bill + tip
+		}`
+	);
+}
+
+let tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+
+console.log(
+	`The bill was ${bill}, the tip was ${tip} and the total value is ${
+		bill + tip
+	}`
+);
+
+//End of Coding Challenge 4
 */
 
-let age = 1995;
+//Part 1 test
+const country = "South Africa";
+const continent = "Africa";
+let population = 1000000;
+
+console.log(country, continent, population);
+
+const isIsland = false;
+
+let language;
+
+console.log(
+	typeof isIsland,
+	typeof country,
+	typeof continent,
+	typeof population
+);
+
+language = "English";
+
+console.log(population / 2);
+population++;
+console.log(population);
+const finlandPop = 6000000;
+console.log(population > finlandPop);
+const popAvergae = 33000000;
+console.log(popAvergae > population);
+
+console.log(
+	`${country} is in ${continent}, and it's ${population} million people speak ${language}`
+);
+
+if (population > popAvergae) {
+	console.log(`${country} population is above average`);
+} else {
+	console.log(
+		`${country} population is ${popAvergae - population} below average`
+	);
+}
+
+// const numNeighbours = Number(
+// 	prompt("How many neighbour countries does your country have?")
+// );
+
+// if (numNeighbours === 1) {
+// 	console.log("Only 1 border");
+// } else if (numNeighbours > 1) {
+// 	console.log("More than 1");
+// } else {
+// 	console.log("No bordering countries");
+// }
+
+if (population < 50000000 && language === "English" && !isIsland) {
+	console.log("Matthew Should live in South Africa");
+}
+
+const language2 = "hindi";
+switch (language2) {
+	case "english":
+		console.log("3rd place");
+		break;
+	case "chinese":
+		console.log("Most number of native speakers");
+		break;
+	case "spanish":
+		console.log("2nd place in number of native speakers");
+		break;
+	case "hindi":
+		console.log("Number 4");
+		break;
+	case "arabic":
+		console.log("5th most spoken language");
+		break;
+	case "arabic":
+		console.log("5th most spoken language");
+		break;
+	default:
+		console.log("Great language too :D");
+}
+
+console.log(
+	`${country} population is ${population > 33000000 ? "Above" : "Below"}`
+);
