@@ -1,3 +1,4 @@
+"use strict";
 /*
 //Section 2
 
@@ -358,7 +359,7 @@ console.log(
 );
 
 //End of Coding Challenge 4
-*/
+
 
 //Part 1 test
 const country = "South Africa";
@@ -400,17 +401,17 @@ if (population > popAvergae) {
 	);
 }
 
-// const numNeighbours = Number(
-// 	prompt("How many neighbour countries does your country have?")
-// );
+const numNeighbours = Number(
+	prompt("How many neighbour countries does your country have?")
+);
 
-// if (numNeighbours === 1) {
-// 	console.log("Only 1 border");
-// } else if (numNeighbours > 1) {
-// 	console.log("More than 1");
-// } else {
-// 	console.log("No bordering countries");
-// }
+if (numNeighbours === 1) {
+	console.log("Only 1 border");
+} else if (numNeighbours > 1) {
+	console.log("More than 1");
+} else {
+	console.log("No bordering countries");
+}
 
 if (population < 50000000 && language === "English" && !isIsland) {
 	console.log("Matthew Should live in South Africa");
@@ -443,3 +444,93 @@ switch (language2) {
 console.log(
 	`${country} population is ${population > 33000000 ? "Above" : "Below"}`
 );
+
+//End of Part 1 test
+
+
+"use strict"; //Notes, activates strict mode, needs to be the first line of code in the file
+
+let hasDriversLicesnse = false;
+
+const passTest = true;
+
+if (passTest) {
+	hasDriversLicesnse = true;
+}
+
+if (hasDriversLicesnse) {
+	console.log("I can drive :D");
+}
+
+
+//Notes, parametes are places in the yellow brackets below
+function logger() {
+	console.log("My name is Matthew");
+}
+
+//Notes, Calling / Running / Envoking the function is below
+logger();
+logger();
+logger();
+logger();
+logger();
+
+function fruitProcessor(apples, oranges) {
+	const juice = `Juice with ${apples} apples and ${oranges} oranges`;
+	return juice;
+}
+
+const appleJuice = fruitProcessor(5, 0); //Notes, when the function is called the values placed in here will be used as the parameters. These are called arguments
+
+console.log(appleJuice);
+
+const appleOrangeJuice = fruitProcessor(2, 4);
+console.log(appleOrangeJuice);
+
+
+
+
+
+function calcAge1(birthYear) {
+	//const age = 2022 - birthYear;
+	return 2022 - birthYear;
+}
+
+const age1 = calcAge1(1995);
+console.log(age1);
+
+const calcAge2 = function (birthYear) {
+	return 2022 - birthYear;
+};
+const age2 = calcAge2(1997);
+console.log(age2);
+
+
+function describeCountry(country, population, capitalCity) {
+	return `${country} has ${population} million people in it's capital city ${capitalCity}`;
+}
+
+const country1 = describeCountry("Country1", 1, "City1");
+const country2 = describeCountry("Country2", 2, "City2");
+const country3 = describeCountry("Country3", 3, "City3");
+
+console.log(country1, country2, country3);
+
+function percentageOfWorld(population) {
+	return (population / 7900) * 10;
+}
+
+const africaPop = percentageOfWorld(6);
+const fricaPop = percentageOfWorld(60);
+const ricaPop = percentageOfWorld(900);
+console.log(africaPop, fricaPop, ricaPop);
+
+const percentageOfWorld2 = function () {
+	return (population / 7900) * 10;
+};
+
+const pop1 = percentageOfWorld(6);
+const pop2 = percentageOfWorld(60);
+const pop3 = percentageOfWorld(900);
+console.log(pop1, pop2, pop3);
+*/
