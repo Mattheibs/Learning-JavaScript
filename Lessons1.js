@@ -488,9 +488,6 @@ const appleOrangeJuice = fruitProcessor(2, 4);
 console.log(appleOrangeJuice);
 
 
-
-
-
 function calcAge1(birthYear) {
 	//const age = 2022 - birthYear;
 	return 2022 - birthYear;
@@ -533,4 +530,67 @@ const pop1 = percentageOfWorld(6);
 const pop2 = percentageOfWorld(60);
 const pop3 = percentageOfWorld(900);
 console.log(pop1, pop2, pop3);
+
+
+//Notes, function declaration and function expression above
+
+//Notes, arrow function below 
+
+const calcAge3 = birthYear => 2022 - birthYear;//Notes, return doesn't need to be added if there is only one liner function
+
+const age3 = calcAge3(1995)
+console.log(age3)
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+const age = 2022 - birthYear;
+const retirement = 65 - age;
+//return retirement;
+return `${firstName} retires in ${retirement} years`
+}
+
+console.log(yearsUntilRetirement(1995, "Matthew Heiberg"));
+console.log(yearsUntilRetirement(1990, "Gareth Heiberg"));
+
+//Notes, one function calling another function
+function cutFruitPieces(fruit){
+return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges){
+const applePieces = cutFruitPieces(apples);
+const orangePieces = cutFruitPieces(oranges);
+
+const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges`
+return juice;
+}
+
+console.log(fruitProcessor(2, 3))
+
+
+
+function percentageOfWorld1(percentage){
+return (percentage / 7900) * 100;
+}
+
+function describePopulation(country, population){
+const percentage1 = percentageOfWorld1(population);
+const description =  `${country} has ${population} million people, which is about ${percentage1}of the world`
+console.log(description)
+}
+describePopulation("South Africa", 8)
+
+
+function age1(birthYear) {
+	return 2022 - birthYear;
+}
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+	const age = age1(birthYear);
+	const retirement = 65 - age;
+	//return retirement;
+	return `${firstName} retires in ${retirement} years`;
+};
+
+console.log(yearsUntilRetirement(1995, "Matthew Heiberg"));
+console.log(yearsUntilRetirement(1990, "Gareth Heiberg"));
 */
