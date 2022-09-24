@@ -623,4 +623,210 @@ const scoreKoalas2 = calcAverage(23, 34, 27);
 
 checkWinner(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins2, scoreKoalas2);
+
+
+const friend1 = "Matthew";
+const friend2 = "Gareth";
+const friend3 = "Andrew";
+
+//Notes, Arrays start at 0 when reading the elements
+
+const friends = ["Matthew", "Gareth", "Andrew"];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2022);
+console.log(years);
+
+console.log(friends[0]); //Notes, retrieving an element from an array
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = "Jen"; //Notes, this is how an element in an array can be changed
+console.log(friends);
+
+const firstName = "Matthew";
+const matthew = [firstName, "Heiberg", 2022 - 1995, friends];
+console.log(matthew);
+
+const calcAge = function (birthYear) {
+	return 2022 - birthYear;
+};
+
+const brtyears = [1990, 1996, 2018, 1568];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[2]);
+const age3 = calcAge(years[3]);
+
+console.log(age1, age2, age3);
+
+const ages = [calcAge(years[0]), calcAge(years[2]), calcAge(years[3])];
+console.log(ages);
+
+
+const friends = ["Matthew", "Gareth", "Andrew"];
+//Notes, Array methods
+//Notes, push adds elements to the end of an array
+const newLenght = friends.push("Nicholas");
+console.log(friends);
+console.log(newLenght);
+
+//Notes, unshift adds element to the beginning of the array
+friends.unshift("Shannon");
+console.log(friends);
+
+//Notes, pop removes elements from the end of the array
+friends.pop();
+const removed = friends.pop();
+console.log(friends);
+console.log(removed);
+
+//Notes, shift removes elements from the beginning of the array
+friends.shift();
+console.log(friends);
+
+//Notes, indexof tells us where an element is in the array
+console.log(friends.indexOf("Gareth"));
+
+//Notes, includes tell us if the element is in the array(true) or not(false)
+console.log(friends.includes("Robert"));
+console.log(friends.includes("Gareth"));
+
+if (friends.includes("Peter")) {
+	console.log("You know a Peter");
+} else {
+	console.log("You don't know a Peter");
+}
+
+
+function calcTip(bill) {
+	if (bill > 50 && bill < 300) {
+		let tip = bill * 0.15;
+		return tip;
+	} else if (bill < 50 || bill > 300) {
+		let tip = bill * 0.2;
+		return tip;
+	}
+}
+
+const bills = [125, 556, 44];
+const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = [tip[0] + bills[0], tip[1] + bills[1], tip[2] + bills[2]];
+console.log(totals);
+
+
+//Notes, objects hold properties
+
+const matthew = {
+	firstName: "Matthew",
+	lastName: "Heiberg",
+	age: 2022 - 1995,
+	job: "Operator",
+	friends: ["Matthew", "Gareth", "Andrew"],
+};
+
+console.log(matthew);
+
+//Notes, dot and bracket notation to get property from an object
+
+console.log(matthew.lastName);
+console.log(matthew["lastName"]);
+
+const nameKey = "Name";
+console.log(matthew["first" + nameKey]);
+console.log(matthew["last" + nameKey]);
+
+const interstedIn = prompt(
+	"What do you want to know about matthew? Choose between firstName, lastName, age, job and friends"
+);
+console.log(matthew[interstedIn]);
+
+if (matthew[interstedIn]) {
+	console.log(matthew[interstedIn]);
+} else {
+	console.log("That isn't known");
+}
+
+matthew.location = "Cape Town";
+matthew["twitter"] = "Twitter Name";
+console.log(matthew);
+
+
+const matthew = {
+	firstName: "Matthew",
+	lastName: "Heiberg",
+	age: 2022 - 1995,
+	job: "Operator",
+	friends: ["Matthew", "Gareth", "Andrew"],
+};
+
+console.log(
+	`${matthew.firstName} has ${matthew.friends.length} friends, and his best friends name is ${matthew.friends[0]}`
+);
+
+const matthew = {
+	firstName: "Matthew",
+	lastName: "Heiberg",
+	birthYear: 1995,
+	job: "Operator",
+	friends: ["Matthew", "Gareth", "Andrew"],
+	hasDrivers: true,
+
+	//calcAge: function (birthYear) {
+	//	return 2022 - birthYear;
+	//},
+
+	// calcAge: function () {
+	// 	return 2022 - this.birthYear; //Notes, the word 'this' is used for when you want to access a property in the object
+	// },
+
+	calcAge: function () {
+		this.age = 2022 - this.birthYear;
+		return this.age;
+	},
+
+	getSummary: function () {
+		return `${this.firstName} is a ${this.age} year old ${
+			this.job
+		} and he has ${this.hasDrivers ? "a" : "no"} drivers license`;
+	},
+};
+//Notes, a function in an object is called a method
+
+matthew.calcAge();
+console.log(matthew.getSummary());
 */
+
+const mark = {
+	fullName: "Mark Miller",
+	height: 1.69,
+	weight: 78,
+	calcBMI: function () {
+		this.bmi = this.weight / this.height ** 2;
+		return this.bmi;
+	},
+};
+
+const john = {
+	fullName: "John Smith",
+	height: 1.95,
+	weight: 912,
+	calcBMI: function () {
+		this.bmi = this.weight / this.height ** 2;
+		return this.bmi;
+	},
+};
+
+mark.calcBMI();
+john.calcBMI();
+if (mark.bmi > john.bmi) {
+	console.log(
+		`${mark.fullName}'s BMI ${mark.bmi} is higher than ${john.fullName}'s BMI which is ${john.bmi}`
+	);
+} else {
+	console.log(
+		`${john.fullName}'s BMI ${john.bmi} is higher than ${mark.fullName}'s BMI which is ${mark.bmi}`
+	);
+}
