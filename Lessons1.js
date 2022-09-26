@@ -797,7 +797,7 @@ const matthew = {
 
 matthew.calcAge();
 console.log(matthew.getSummary());
-*/
+
 
 const mark = {
 	fullName: "Mark Miller",
@@ -830,3 +830,189 @@ if (mark.bmi > john.bmi) {
 		`${john.fullName}'s BMI ${john.bmi} is higher than ${mark.fullName}'s BMI which is ${mark.bmi}`
 	);
 }
+
+//Notes, loops
+console.log("Lifting weights rep 1");
+console.log("Lifting weights rep 2");
+console.log("Lifting weights rep 3");
+console.log("Lifting weights rep 4");
+
+//Notes, for loop keeps running while condition is true(second part of the loop). The first part of the for loop is what number to start at. The third part is how many to increase by
+for (let rep = 0; rep <= 10; rep++) {
+	console.log(`Lifting weights repetition ${rep}`);
+}
+
+//Notes, looping through arrays
+const matthew = [
+	"Matthew",
+	"Heiberg",
+	2022 - 1995,
+	"Operator",
+	["Matthew", "Gareth", "Jen"],
+	true,
+];
+
+const types = [];
+
+for (let i = 0; i < matthew.length; i++) {
+	console.log(`${matthew[i]} which has a type of ${typeof matthew[i]}`);
+	//Notes, creating new array using another array
+	//types[i] = typeof matthew[i];
+	types.push(typeof matthew[i]);
+}
+console.log(types);
+
+const birthYears = [1991, 2002, 1556, 1998];
+const ages = [];
+
+for (let i = 0; i < birthYears.length; i++) {
+	ages.push(2022 - birthYears[i]);
+}
+
+
+//Notes, continue and break statements
+
+const matthew = [
+	"Matthew",
+	"Heiberg",
+	2022 - 1995,
+	"Operator",
+	["Matthew", "Gareth", "Jen"],
+	true,
+];
+
+//Notes, conitnue basically means skipped
+for (let i = 0; i < matthew.length; i++) {
+	if (typeof matthew[i] !== "string") continue; //Notes, only strings will be printed
+	console.log(`${matthew[i]} which has a type of ${typeof matthew[i]}`);
+}
+
+//Notes, break stops the loop completely
+for (let i = 0; i < matthew.length; i++) {
+	if (typeof matthew[i] === "number") break; //Notes, loop will stop when the first number is found
+	console.log(`${matthew[i]} which has a type of ${typeof matthew[i]}`);
+}
+
+const matthew = [
+	"Matthew",
+	"Heiberg",
+	2022 - 1995,
+	"Operator",
+	["Matthew", "Gareth", "Jen"],
+	true,
+];
+
+//Notes, loop backwards
+for (let i = matthew.length - 1; i >= 0; i--) {
+	console.log(`${i} , ${matthew[i]} has the type of ${typeof matthew[i]}`);
+}
+
+//Notes, loop inside a loop
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+	console.log(`-------------exercise ${exercise}`);
+	for (let rep = 1; rep <= 5; rep++) {
+		console.log(`exercise${exercise}: rep ${rep}`);
+	}
+}
+
+
+//Notes, while loop
+let rep = 1;
+while (rep <= 10) {
+	console.log(`While loop:Lifting weights repetition ${rep}`);
+	rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+	console.log(`You rolled a ${dice}`);
+	dice = Math.trunc(Math.random() * 6) + 1;
+	if (dice === 6) {
+		console.log("You rolled a 6");
+	}
+}
+
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totals = [];
+
+function calcTip(bill) {
+	if (bill > 50 && bill < 300) {
+		let tip = bill * 0.15;
+		return tip;
+	} else if (bill < 50 || bill > 300) {
+		let tip = bill * 0.2;
+		return tip;
+	}
+}
+
+for (let i = 0; i < bills.length; i++) {
+	tips.push(calcTip(bills[i]));
+	totals.push(tips[i] + bills[i]);
+}
+
+console.log(bills, tips, totals);
+
+let average;
+let sum = 0;
+for (let i = 0; i < totals.length; i++) {
+	//sum = sum + totals[i];
+	sum += totals[i];
+	average = sum / totals.length;
+}
+
+
+const myCountry = {
+	country: "South Africa",
+	capital: "Cape Town",
+	language: "English",
+	population: 1,
+	neighbours: ["neigh1", "neigh2", "neigh3"],
+	describe: function () {
+		console.log(`${this.country} has a population of ${this.population}`);
+	},
+};
+
+myCountry.describe();
+console.log(
+	`${myCountry.country} has ${myCountry.population} ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`
+);
+
+myCountry.population = myCountry.population + 2;
+console.log(
+	`${myCountry.country} has ${myCountry.population} ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`
+);
+myCountry.population = myCountry["population"] - 2;
+console.log(
+	`${myCountry.country} has ${myCountry.population} ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`
+);
+
+for (let i = 1; i <= 50; i++) {
+	console.log(`Voter numver ${i} has voted `);
+}
+
+
+const populations = [10, 1441, 332, 83];
+const percentage2 = [];
+
+function percentageOfWorld(population) {
+	return (population / 7900) * 10;
+}
+
+for (let i = 0; i < populations.length; i++) {
+	percentage2.push(percentageOfWorld(populations[i]));
+}
+
+const listOfNeighbours = [
+	["Canada", "Mexico"],
+	["Spain"],
+	["Norway", "Sweden", "Russia"],
+];
+
+for (let i = 0; i < listOfNeighbours.length; i++)
+	for (let y = 0; y < listOfNeighbours[i].length; y++)
+		console.log(`${listOfNeighbours[i][y]}`);
+*/
