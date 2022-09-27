@@ -1016,3 +1016,16 @@ for (let i = 0; i < listOfNeighbours.length; i++)
 	for (let y = 0; y < listOfNeighbours[i].length; y++)
 		console.log(`${listOfNeighbours[i][y]}`);
 */
+const matthew = [1, 2, 3, 4, 5];
+console.log(matthew);
+let gareth = [];
+
+function reverse(rev) {
+	for (let i = rev.length - 1; i > -1; i--) {
+		gareth.push(rev[i]);
+	}
+	console.log(gareth);
+	return rev;
+}
+
+reverse(matthew);
