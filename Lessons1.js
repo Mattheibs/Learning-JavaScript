@@ -1015,7 +1015,7 @@ const listOfNeighbours = [
 for (let i = 0; i < listOfNeighbours.length; i++)
 	for (let y = 0; y < listOfNeighbours[i].length; y++)
 		console.log(`${listOfNeighbours[i][y]}`);
-*/
+
 const matthew = [1, 2, 3, 4, 5];
 console.log(matthew);
 let gareth = [];
@@ -1029,3 +1029,108 @@ function reverse(rev) {
 }
 
 reverse(matthew);
+
+const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 14, 9, 5];
+
+//Notes, when trying to find min and max in an array 
+
+const calcTempAmplitude = function(temps){
+	let max = temps[0];
+let min = temps[0];
+	for(let i = 0; i < temps.length; i++){
+
+if(typeof temps[i] !== "number") continue;
+		if(temps[i] > max){
+			max = temps[i];
+					}
+if(temps[i] < min){
+			min = temps[i];
+					}
+}
+	console.log(max, min)
+return max -min;
+
+}
+
+const amplitude = calcTempAmplitude(temperatures);
+console.log(amplitude);
+
+
+const temps1 = [1,2,3,4]
+const temps2 = [5,6,7]
+
+//Notes, concat is used to combine arrays
+const calcTempAmplitudeNew = function(temp1, temp2){
+const temps3 = temp1.concat(temp2);
+console.log(temps3)
+	let max = temps3[0];
+let min = temps3[0];
+	for(let i = 0; i < temps3.length; i++){
+
+if(typeof temps3[i] !== "number") continue;//Notes, using continue to skip any "errors" in the array
+ 		if(temps3[i] > max){
+			max = temps3[i];
+					}
+if(temps3[i] < min){
+			min = temps3[i];
+					}
+}
+	console.log(max, min)
+return max -min;
+
+}
+const amplitudeNew = calcTempAmplitudeNew(temps1, temps2);
+console.log(amplitudeNew);
+
+
+console.log("Hello")
+
+
+const measureKelvin = function(){
+const measurement = {
+type: "temp",
+unit: "cels",
+value: prompt("degress"),
+};
+
+console.warn("Warning")
+console.error("Error")
+console.table(measurement)//Notes, displays aan object in table form 
+const kelvin = Number(measurement.value) + 273;
+return kelvin;
+}
+
+
+console.log(measureKelvin())
+//Notes, debugging
+//First find the bug, then use console.log in different areas to see if all the parameters are working 
+//Notes, can use the Sources tab on googles inspect 
+*/
+
+const test1 = [17, 21, 23];
+
+const printForecast = function (arr) {
+	let str = "";
+	for (let i = 0; i < arr.length; i++) {
+		str = str + `${arr[i]}C in ${i + 1} days ... `;
+		console.log(str);
+	}
+	console.log("..." + str);
+};
+
+printForecast(test1);
+
+let number = Number(prompt("Set the number"));
+let guess = Number(prompt("Guess a number"));
+
+for (let i = 0; i < 10; i++) {
+	if (guess < number) {
+		console.log("Too low");
+		guess = Number(prompt("Guess again"));
+	} else if (guess > number) {
+		console.log("Too high");
+		guess = Number(prompt("Guess again"));
+	} else {
+		console.log("You got it");
+	}
+}
