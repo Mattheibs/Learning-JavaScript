@@ -1105,7 +1105,7 @@ console.log(measureKelvin())
 //Notes, debugging
 //First find the bug, then use console.log in different areas to see if all the parameters are working 
 //Notes, can use the Sources tab on googles inspect 
-*/
+
 
 const test1 = [17, 21, 23];
 
@@ -1134,3 +1134,89 @@ for (let i = 0; i < 10; i++) {
 		console.log("You got it");
 	}
 }
+
+
+document.querySelector(".message"); //Notes, (.) when selecting a class (#) when selecting an ID
+
+console.log(document.querySelector(".message").textContent);
+
+document.querySelector(".message").textContent = "Correct";
+
+document.querySelector(".number").textContent = 13;
+document.querySelector(".score").textContent = 15;
+document.querySelector(".guess").value = 15; ////Notes, will an input field you use value instead of textContent
+
+
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
+let score = 20;
+let highScore = 0;
+
+const displayMessage = function (message) {
+	document.querySelector(".message").textContent = message;
+};
+
+document.querySelector(".check").addEventListener("click", function () {
+	const guess = Number(document.querySelector(".guess").value); ////Notes, this is the event handler
+	console.log(guess);
+
+	if (!guess) {
+		displayMessage("Please put valid number"); //Notes, when there is no input
+	} else if (guess === secretNumber) {
+		displayMessage("🎉 Correct Number!"); //When the answer is correct
+		document.querySelector("body").style.backgroundColor = "green";
+		document.querySelector(".number").style.width = "30rem";
+		document.querySelector(".number").textContent = secretNumber;
+
+		if (score > highScore) {
+			highScore = score;
+			document.querySelector(".highscore").textContent = highScore;
+		}
+	} else if (guess !== secretNumber) {
+		if (guess > 1) {
+			displayMessage(
+				guess > secretNumber ? "📈 Too high!" : "Too low"
+			);
+			score--;
+			document.querySelector(".score").textContent = score;
+		} else {
+			displayMessage("You lost");
+			document.querySelector(".score").textContent = 0;
+		}
+	} //Notes, when guess is wrong
+});
+
+document.querySelector(".again").addEventListener("click", function () {
+	secretNumber = Math.trunc(Math.random() * 20) + 1;
+	score = 20;
+	document.querySelector(".score").textContent = score;
+	displayMessage("Guess the number");
+	document.querySelector(".guess").value = " ";
+	document.querySelector("body").style.backgroundColor = "#222";
+	document.querySelector(".number").textContent = "?";
+});
+*/
+
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+const btnsOpenModal = document.querySelectorAll(".show-modal");
+console.log(btnsOpenModal);
+
+for (let i = 0; i < btnsOpenModal.length; i++)
+	btnsOpenModal[i].addEventListener("click", function () {
+		console.log("Button click");
+		modal.classList.remove("hidden");
+		overlay.classList.remove("hidden");
+	});
+
+const closeModal = function () {
+	modal.classList.add("hidden");
+	overlay.classList.add("hidden");
+};
+btnCloseModal.addEventListener("click", function () {
+	closeModal();
+});
+
+overlay.addEventListener("click", function () {
+	closeModal();
+});
