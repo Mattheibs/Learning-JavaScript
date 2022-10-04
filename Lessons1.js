@@ -1194,29 +1194,31 @@ document.querySelector(".again").addEventListener("click", function () {
 	document.querySelector("body").style.backgroundColor = "#222";
 	document.querySelector(".number").textContent = "?";
 });
+
+// const modal = document.querySelector(".modal");
+// const overlay = document.querySelector(".overlay");
+// const btnCloseModal = document.querySelector(".close-modal");
+// const btnsOpenModal = document.querySelectorAll(".show-modal");
+// console.log(btnsOpenModal);
+
+// const closeModal = function () {
+// 	modal.classList.add("hidden");
+// 	overlay.classList.add("hidden");
+// };
+
+// const openModel = function () {
+// 	modal.classList.remove("hidden");
+// 	overlay.classList.remove("hidden");
+// };
+// for (let i = 0; i < btnsOpenModal.length; i++)
+// 	btnsOpenModal[i].addEventListener("click", openModel);
+
+// btnCloseModal.addEventListener("click", closeModal); //Notes, don't call the function with brackets (), this will immediately run the function
+// overlay.addEventListener("click", closeModal);
+
+// document.addEventListener("keydown", function (event) {
+// 	if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+// 		closeModal();
+// 	}
+// });
 */
-
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".close-modal");
-const btnsOpenModal = document.querySelectorAll(".show-modal");
-console.log(btnsOpenModal);
-
-for (let i = 0; i < btnsOpenModal.length; i++)
-	btnsOpenModal[i].addEventListener("click", function () {
-		console.log("Button click");
-		modal.classList.remove("hidden");
-		overlay.classList.remove("hidden");
-	});
-
-const closeModal = function () {
-	modal.classList.add("hidden");
-	overlay.classList.add("hidden");
-};
-btnCloseModal.addEventListener("click", function () {
-	closeModal();
-});
-
-overlay.addEventListener("click", function () {
-	closeModal();
-});
